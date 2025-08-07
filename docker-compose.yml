@@ -6,8 +6,15 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    env_file:
-      - .env
+    environment:
+      - SERVERNAME=${SERVERNAME}
+      - PASSWORD=${PASSWORD}
+      - ADMINUSERNAME=${ADMINUSERNAME}
+      - ADMINPASSWORD=${ADMINPASSWORD}
+      - MODFOLDERS=${MODFOLDERS}
+      - MEMORY=${MEMORY}
+      - MOD_IDS=${MOD_IDS}
+      - WORKSHOP_IDS=${WORKSHOP_IDS}
     ports:
       - "16261:16261/udp"
       - "16262:16262/udp"
